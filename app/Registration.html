@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" ng-app="ekinApp">
+    <meta charset="UTF-8">
+    <title>Ekincare</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+
+<body ng-cloak ng-controller="userRegister">
+
+<div class="container-fluid">
+
+<style>input.ng-invalid.ng-dirty{background-color:pink}</style>
+        <form name="registration">
+
+            <div class="row-fluid">
+
+                <div class="span3">
+                    <fieldset>
+                        <label for="userName">User Name:</label>
+                        <input focus id="userName" required  ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username"  ng-model="user.userName" />
+
+                        <label for="password">Password:</label>
+                        <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+
+                        <div style="margin-top:15px">
+
+                            <label for="name">Name:</label>
+                            <input id="name" type="text" placeholder="Name" ng-model="user.name" />
+                            <label for="emailAddress">Email Address:</label>
+                            <input id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" />
+                            <!--<label for="gender">Gender:</label>-->
+                            <!--<input id="gender" type="radio" name="gender" ng-model="user.gender" value="male"> Male
+                            <input id="gender" type="radio" name="gender" ng-model="user.gender" value="female"> Female<br/>-->
+
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span6 offset3">
+                    <div class="pull-left"><button type="button"  ng-click="cancel()" class="btn btn-default">CANCEL</button></div>
+                    <div class="pull-right"><button type="submit" ng-disabled="registration.$invalid" ng-click="saveProfile(user,registration)" class="btn btn-primary">REGISTER</button></div>
+                </div>
+            </div>
+
+        </form>
+</div>
+
+
+
+
+
+
+<script src="/lib/angular/angular-resource.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/underscore-1.4.4.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controllers/userRegister.js"></script>
+<script src="/js/services/UserData.js"></script>
+<script src="/js/services/authService.js"></script>
+
+
+</body>
+</html>

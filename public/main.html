@@ -1,0 +1,59 @@
+<html ng-app="sample" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta charset="utf-8"/>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <title>Hello AngularJS</title>
+    <script src="app.js"></script>
+    <script src="hello.js"></script>
+</head>
+<body ng-controller="MainCntrlCustomer">
+<div >
+    <h1 class="page-header">Book List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th width="25px">ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th width="50px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="client in clients">
+            <td>{{client.id}}</td>
+            <td>{{client.first_name}}</td>
+            <td>{{client.last_name}}</td>
+            <td>{{client.email}}</td>
+            <!-- ng-show="user.id &&user.id==e.user_id" -->
+            <td >
+                <br/>
+                Id:<input type="text" ng-model="client.id" value="$scope.client.name"/>
+                FirstName:<input type="text" ng-model="client.first_name" value="$scope.client.first_name"/>
+                LastName:<input type="text" ng-model="client.client.last_name" value="$scope.client.last_name"/>
+                Email:<input type="text" ng-model="client.email"/>
+                <button   ng-click="putClientEdit(client.id)" >EDIT</button>
+
+
+                <button  ng-click="deleteClient(client.id)" >DELETE</button>
+        </tr>
+        </tbody>
+    </table>
+    <!-- ng-show="user.username" -->
+    <p>
+    <div>
+        Create Client:
+        <br/>
+        Id:<input type="text" ng-model="client.id"/>
+        FirstName:<input type="text" ng-model="client.first_name"/>
+        LastName:<input type="text" ng-model="client.last_name"/>
+        Email:<input type="text" ng-model="client.email"/>
+        <button ng-click="createNewClient(client)">CREATE</button>
+    </div>
+
+    </p>
+</div>
+</body>
+</html>

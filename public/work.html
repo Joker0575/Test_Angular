@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="sample" lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <title>Hello AngularJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="hello.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div ng-controller="ModalCtrl" class="container">
+    <h2>Clients Data</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <tr ng-click="setSelected()" class="clientRow" ng-repeat="client in clients">
+            <td>{{client.first_name}}</td>
+            <td>{{client.last_name}}</td>
+            <td>{{client.email}}</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
